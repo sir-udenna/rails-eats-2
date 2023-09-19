@@ -4,6 +4,8 @@ class User < ApplicationRecord
     has_many :follows
     has_many :likes
 
+    devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+    
     # validates :username, presence: true
     # validates :email, presence: true, uniqueness: true
     # validates :password, presence: true, uniqueness: true
