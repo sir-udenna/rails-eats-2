@@ -22,4 +22,10 @@ class User < ApplicationRecord
     #     self.recently_visited_places << place
     #     save
     #   end
+
+    def generate_authentication_token
+        token = Devise.friendly_token
+        self.update(authentication_token: token)
+        token
+      end
 end
