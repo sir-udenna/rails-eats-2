@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   post '/users/sign_in', to: 'users/sessions#create', defaults: { format: :json }
 
+  get '/api/yelp_restaurants', to: 'yelp_restaurants#search', defaults: { format: :json }
+
 end

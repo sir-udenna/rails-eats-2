@@ -54,6 +54,8 @@ group :development, :test do
 
   gem 'devise'
 
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 end
 
 group :development do
@@ -75,3 +77,4 @@ group :test do
 end
 
 gem 'rack-cors'
+gem 'rest-client'
