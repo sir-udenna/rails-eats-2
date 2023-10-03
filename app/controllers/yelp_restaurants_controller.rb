@@ -1,6 +1,10 @@
 require 'net/http'
 
 class YelpRestaurantsController < ApplicationController
+  before_action :current_user, only: [:search]
+
+  
+
   def search
     begin
       # Parameters
@@ -32,7 +36,6 @@ class YelpRestaurantsController < ApplicationController
 
       # Send the request and get the response
       response = http.request(request)
-      puts "Yelp API Response: #{response.body}"
 
       if response.is_a?(Net::HTTPSuccess)
         # Parse and send the Yelp API response to the frontend

@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  post '/users/sign_in', to: 'users/sessions#create', defaults: { format: :json }
+  # post '/users/sign_in', to: 'users/sessions#create', defaults: { format: :json }
+  # delete '/users/sign_out', to: 'users/sessions#destroy', defaults: { format: :json }
 
   get '/api/yelp_restaurants', to: 'yelp_restaurants#search', defaults: { format: :json }
 
