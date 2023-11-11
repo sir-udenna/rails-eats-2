@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class Users::SessionsController < Devise::SessionsController
-  # before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
   respond_to :json
   # before_action :configure_sign_in_params, only: [:create]
 
@@ -11,6 +11,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    puts("hit route")
+
     # email = params[:user][:email]
     # password = params[:user][:password]
     
@@ -25,8 +27,8 @@ class Users::SessionsController < Devise::SessionsController
   
     #   render json: { user: user, token: token }
     # else
-      # # Authentication failed
-      # render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
+    #   # Authentication failed
+    #   render json: { error: 'Invalid email or password' }, status: :unprocessable_entity
     # end
     super
   end
@@ -34,7 +36,6 @@ class Users::SessionsController < Devise::SessionsController
   # DELETE /resource/sign_out
   def destroy
     super
-    puts("hit route")
   end
 
   # protected

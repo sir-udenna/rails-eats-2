@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   # delete '/users/sign_out', to: 'users/sessions#destroy', defaults: { format: :json }
 
   get '/api/yelp_restaurants', to: 'yelp_restaurants#search', defaults: { format: :json }
-
 end

@@ -1,9 +1,7 @@
 require 'net/http'
 
 class YelpRestaurantsController < ApplicationController
-  before_action :current_user, only: [:search]
-
-  
+  # before_action :authenticate_user!, only: [:search]
 
   def search
     begin
